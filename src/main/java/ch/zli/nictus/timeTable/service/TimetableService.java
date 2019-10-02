@@ -1,8 +1,6 @@
 package ch.zli.nictus.timeTable.service;
 
-import ch.zli.nictus.timeTable.model.Subject;
 import ch.zli.nictus.timeTable.model.Timetable;
-import ch.zli.nictus.timeTable.repository.SubjectRepository;
 import ch.zli.nictus.timeTable.repository.TimetableRepository;
 import org.springframework.stereotype.Service;
 

@@ -29,7 +29,7 @@ public class SchoolClass {
         this.schoolClassId = schoolClassId;
     }
 
-    public List<Timetable> getTimetable() {
+    public List<Timetable> getTimetableList() {
         return timetable;
     }
 
