@@ -20,6 +20,11 @@ public class UserController {
         this.userService = userService;
     }
 
+    /**
+     * Get a list of all created users
+     *
+     * @return a list of all user objects
+     */
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<UserDTO> getAllEntries() {
@@ -31,18 +36,36 @@ public class UserController {
         return dtoList;
     }
 
+    /**
+     * Creates a new user
+     *
+     * @param user the data of the user you want to create
+     * @return the newly created user
+     */
     @PostMapping("new")
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO createSubject(@Valid @RequestBody User user) {
         return UserDTO.toDTO(userService.createUser(user));
     }
 
+    /**
+     * Deletes a user
+     *
+     * @param id the id of the user you want to delete
+     */
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEntry(@PathVariable Long id) {
         userService.deleteUserById(id);
     }
 
+    /**
+     * Updates the data of a user
+     *
+     * @param user the updated data of a user object you want to have
+     * @param id the id of the user you want to update
+     * @return the updated user
+     */
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public User updateEntry(@Valid @RequestBody User user, @PathVariable Long id) {

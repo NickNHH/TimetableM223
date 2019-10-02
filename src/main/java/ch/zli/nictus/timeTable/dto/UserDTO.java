@@ -1,11 +1,7 @@
 package ch.zli.nictus.timeTable.dto;
 
 import ch.zli.nictus.timeTable.model.SchoolClass;
-import ch.zli.nictus.timeTable.model.Subject;
-import ch.zli.nictus.timeTable.model.Timetable;
 import ch.zli.nictus.timeTable.model.User;
-
-import java.util.ArrayList;
 
 public class UserDTO {
 
