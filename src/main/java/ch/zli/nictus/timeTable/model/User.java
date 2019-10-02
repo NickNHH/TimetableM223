@@ -9,8 +9,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
 
-    @Column(nullable = false)
-    private long schoolClass;
+    @ManyToOne
+    private SchoolClass schoolClass;
 
     @Column(nullable = false)
     private String username;
@@ -26,11 +26,11 @@ public class User {
         this.userId = userId;
     }
 
-    public long getSchoolClass() {
+    public SchoolClass getSchoolClass() {
         return schoolClass;
     }
 
-    public void setSchoolClass(long schoolClass) {
+    public void setSchoolClass(SchoolClass schoolClass) {
         this.schoolClass = schoolClass;
     }
 

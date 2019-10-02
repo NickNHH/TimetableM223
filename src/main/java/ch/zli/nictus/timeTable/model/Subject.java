@@ -2,6 +2,7 @@ package ch.zli.nictus.timeTable.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Subject {
@@ -21,6 +22,10 @@ public class Subject {
 
     @Column(nullable = false)
     private String day;
+
+    @ManyToMany
+    @Column(nullable = false)
+    private List<Timetable> timetableList;
 
     public long getSubjectId() {
         return subjectId;
@@ -60,5 +65,13 @@ public class Subject {
 
     public void setDay(String day) {
         this.day = day;
+    }
+
+    public List<Timetable> getTimetableList() {
+        return timetableList;
+    }
+
+    public void setTimetableList(List<Timetable> timetableList) {
+        this.timetableList = timetableList;
     }
 }
