@@ -1,5 +1,8 @@
 package ch.zli.nictus.timeTable.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -11,6 +14,7 @@ public class Timetable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long timeTableId;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(mappedBy = "timetableList")
     @Column(nullable = false)
     private List<Subject> subjectList;

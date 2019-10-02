@@ -1,5 +1,8 @@
 package ch.zli.nictus.timeTable.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -23,6 +26,7 @@ public class Subject {
     @Column(nullable = false)
     private String day;
 
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany
     @Column(nullable = false)
     private List<Timetable> timetableList;

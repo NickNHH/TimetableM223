@@ -1,11 +1,13 @@
 package ch.zli.nictus.timeTable.controller;
 
+import ch.zli.nictus.timeTable.dto.SubjectDTO;
 import ch.zli.nictus.timeTable.model.Subject;
 import ch.zli.nictus.timeTable.service.SubjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,14 +22,19 @@ public class SubjectController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Subject> getAllEntries() {
-        return subjectService.findAll();
+    public List<SubjectDTO> getAllEntries() {
+        List<Subject> subjects = subjectService.findAll();
+        List<SubjectDTO> dtoList = new ArrayList<>();
+        for(Subject subject : subjects){
+            dtoList.add(SubjectDTO.toDTO(subject));
+        }
+        return dtoList;
     }
 
     @PostMapping("new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Subject createEntry(@Valid @RequestBody Subject subject) {
-        return subjectService.createSubject(subject);
+    public SubjectDTO createSubject(@Valid @RequestBody Subject subject) {
+        return SubjectDTO.toDTO(subjectService.createSubject(subject));
     }
 
     @DeleteMapping("{id}")
