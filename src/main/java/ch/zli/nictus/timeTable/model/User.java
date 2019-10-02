@@ -1,12 +1,8 @@
 package ch.zli.nictus.timeTable.model;
 
-import org.hibernate.validator.constraints.CodePointLength;
+import javax.persistence.*;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+@Entity
 public class User {
 
     @Id

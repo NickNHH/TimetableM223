@@ -1,7 +1,5 @@
 package ch.zli.nictus.timeTable.model;
 
-import org.hibernate.annotations.Generated;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -16,7 +14,7 @@ public class Timetable {
     private long subject;
 
     @Column
-    private Date validUnitl;
+    private Date validUntil;
 
     public long getTimeTableId() {
         return timeTableId;
@@ -34,11 +32,11 @@ public class Timetable {
         this.subject = subject;
     }
 
-    public Date getValidUnitl() {
-        return validUnitl;
+    public Date getValidUntil() {
+        return validUntil;
     }
 
-    public void setValidUnitl(Date validUnitl) {
-        this.validUnitl = validUnitl;
+    public void setValidUntil(Date validUntil) {
+        this.validUntil = validUntil;
     }
 }
