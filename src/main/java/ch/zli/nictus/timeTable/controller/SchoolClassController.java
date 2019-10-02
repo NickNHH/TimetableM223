@@ -8,6 +8,7 @@ import ch.zli.nictus.timeTable.service.SchoolClassService;
 import ch.zli.nictus.timeTable.service.TimetableService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/schoolClasses")
 public class SchoolClassController {
 
     private SchoolClassService schoolClassService;
