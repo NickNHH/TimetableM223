@@ -1,4 +1,4 @@
-package ch.zli.nictus.timeTable.service;
+package ch.zli.nictus.timeTable.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
