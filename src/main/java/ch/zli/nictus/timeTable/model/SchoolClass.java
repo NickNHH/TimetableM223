@@ -17,7 +17,7 @@ public class SchoolClass {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "schoolClass")
+    @OneToMany(mappedBy = "schoolClass", fetch = FetchType.EAGER)
     @Column(nullable = false)
     private List<User> userList;
 
