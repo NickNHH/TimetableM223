@@ -78,4 +78,22 @@ public class Subject {
     public void setTimetableList(List<Timetable> timetableList) {
         this.timetableList = timetableList;
     }
+
+    public void updateSubject(Subject newSubject) {
+        if (newSubject.getName() != null) {
+            this.setName(newSubject.getName());
+        }
+        if (newSubject.getStartTime() != null) {
+            this.setStartTime(newSubject.getStartTime());
+        }
+        if (newSubject.getEndTime() != null) {
+            this.setEndTime(newSubject.getEndTime());
+        }
+        if (newSubject.getDay() != null) {
+            this.setDay(newSubject.getDay());
+        }
+        if (newSubject.getTimetableList() != null) {
+            this.setTimetableList(newSubject.getTimetableList());
+        }
+    }
 }

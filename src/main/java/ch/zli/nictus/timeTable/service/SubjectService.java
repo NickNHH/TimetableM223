@@ -34,20 +34,8 @@ public class SubjectService {
     }
 
     public Subject updateSubject(Subject subject, long id) {
-        Subject updatedSubject;
-        Optional<Subject> optionalUpdatedEntry = findSubjectById(id);
-
-        if (optionalUpdatedEntry.isPresent()) {
-            updatedSubject = optionalUpdatedEntry.get();
-            updatedSubject.setSubjectId(subject.getSubjectId());
-            updatedSubject.setName(subject.getName());
-            updatedSubject.setStartTime(subject.getStartTime());
-            updatedSubject.setEndTime(subject.getEndTime());
-            updatedSubject.setDay(subject.getDay());
-        } else {
-            updatedSubject = subject;
-            updatedSubject.setSubjectId(id);
-        }
-        return subjectRepository.saveAndFlush(updatedSubject);
+        Subject originalSubject = findSubjectById(id).get();
+        originalSubject.updateSubject(subject);
+        return subjectRepository.saveAndFlush(originalSubject);
     }
 }
