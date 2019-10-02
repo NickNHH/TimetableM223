@@ -49,4 +49,16 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void updateUser(User newUser) {
+        if (newUser.getUsername() != null) {
+            this.setUsername(newUser.getUsername());
+        }
+        if (newUser.getPassword() != null) {
+            this.setPassword(newUser.getPassword());
+        }
+        if (newUser.getSchoolClass() != null) {
+            this.setSchoolClass(newUser.getSchoolClass());
+        }
+    }
 }
